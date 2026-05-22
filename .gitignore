@@ -3,6 +3,12 @@
 # ---- Roo Code 运行时状态（不入库）----
 .roo/rules/.turn_count.json
 
+# ---- 备份文件（不入库）----
+*.bak
+
+# ---- 归档目录（不入库）----
+.archive/
+
 # ---- Python 缓存 ----
 __pycache__/
 *.pyc
