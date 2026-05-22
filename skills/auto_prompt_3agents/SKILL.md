@@ -244,6 +244,48 @@ A round is complete **only when all**:
 - [ ] Deliverable archived via Memos MCP
 - [ ] Reusable template extracted to `.roo/rules/`
 
+## 🔁 Role Handoff Rules
+
+At the end of every deliverable, the current agent **must** output a `[Handoff]` block with exactly 3 options, covering **all two other modes plus stay**.
+
+### Handoff Block Template
+
+```markdown
+---
+## [Handoff] {Role} output complete. Next step options:
+
+1. **[switch to ask]** Let {{REVIEWER_NAME}} review → `switch_mode` to ask
+2. **[switch to code/architect]** Let {{CODER_NAME}} implement / {{DESIGNER_NAME}} redesign → `switch_mode` to {target}
+3. **[stay in {current_mode}]]** Continue refining in current role
+
+Please select (reply with number or mode name):
+---
+```
+
+### Mode-Specific Handoff Defaults
+
+**{{DESIGNER_NAME}} (architect) completing design:**
+- Option 1 (default): Switch to **ask** — let {{REVIEWER_NAME}} review the design first
+- Option 2: Switch to **code** — skip review, direct to implementation
+- Option 3: Stay in **architect** — keep refining the design
+
+**{{CODER_NAME}} (code) completing implementation:**
+- Option 1 (default): Switch to **ask** — let {{REVIEWER_NAME}} review the code first
+- Option 2: Switch to **architect** — architecture issue found, need redesign
+- Option 3: Stay in **code** — keep fixing or adding features
+
+**{{REVIEWER_NAME}} (ask) completing review:**
+- Option 1 (default): Switch to **code** — review passed, let {{CODER_NAME}} implement or fix
+- Option 2: Switch to **architect** — design-level issue found, need redesign
+- Option 3: Stay in **ask** — review incomplete, continue checking
+
+### Handoff Execution Rules
+
+1. **Review-first priority**: Unless user explicitly overrides, the default handoff path routes through {{REVIEWER_NAME}} (ask) for quality gate
+2. **User confirmation required**: After outputting handoff options, wait for user to reply with selection. Do **not** auto-switch modes
+3. **User replies with number or mode name** → call `switch_mode` to the selected mode
+4. **Context preservation**: Before switching, the current agent must archive current state via `add_message` so the receiving agent can `search_memory` to resume
+
 ## 📚 Deliverable Solidification & Reuse
 
 After each quality collaboration completes, feed results back to Designer for capability accumulation.
