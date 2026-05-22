@@ -1,0 +1,30 @@
+# Agent Collaboration Framework — Git Ignore
+
+# ---- Roo Code 运行时状态（不入库）----
+.roo/rules/.turn_count.json
+
+# ---- Python 缓存 ----
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# ---- OS 生成文件 ----
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# ---- 日志文件 ----
+*.log
+
+# ---- 临时文件 ----
+*.tmp
+*.temp
+
+# ---- IDE 配置 ----
+.vs/
+.idea/
+*.swp
+*.swo

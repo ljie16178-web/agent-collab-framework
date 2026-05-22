@@ -1,0 +1,10 @@
+{
+  "name": "auto-prompt-3agents",
+  "version": "1.0.0",
+  "description": "Tri-agent prompt generator framework. Cross-project reusable with instance binding via .roo/skills/auto_prompt_instance.md",
+  "author": "SilverWolf",
+  "license": "MIT",
+  "framework": true,
+  "instance_binding": ".roo/skills/auto_prompt_instance.md",
+  "dependencies": ["memos-mcp", "self-improving-agent"]
+}

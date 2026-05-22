@@ -1,0 +1,9 @@
+{
+  "slug": "anti-ai-flavor-pro",
+  "version": "2.0.0",
+  "name": "Anti-AI Flavor Engine Pro",
+  "description": "多领域去AI味引擎，融合投资报告规范、个性化风格提炼与四层规则体系，将大模型文本转化为产业政策、经济学、学术写作、投资分析四个方向的自然人输出。",
+  "author": "流萤（整合版）",
+  "dependencies": [],
+  "entry_point": "SKILL.md"
+}

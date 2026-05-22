@@ -1,0 +1,11 @@
+{
+  "name": "skill-distiller",
+  "version": "1.0.0",
+  "description": "Multi-agent self-evolution engine. Distills cross-project patterns and feeds back to auto_prompt_3agents",
+  "author": "SilverWolf",
+  "license": "MIT",
+  "framework": true,
+  "instance_binding": ".roo/skills/skilldistiller_instance.md",
+  "meta_skill_target": "skills/auto_prompt_3agents/SKILL.md",
+  "dependencies": ["auto-prompt-3agents", "memos-mcp", "self-improving-agent"]
+}
