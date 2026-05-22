@@ -175,7 +175,7 @@ Step 6：写入 .roo/skills/<project>-<skill-name>.md
 
 **提炼约束**：
 - 所有结果都是**新生成文件**，不修改原始通用 skill
-- 通用 skill 路径：`~/.workbuddy/skills/` 或原始发布路径
+- 通用 skill 路径：`skills/` 或原始发布路径
 - 项目专用版路径：`.roo/skills/<project>-<skill-name>.md`
 
 **反向上化**：如果某 skill 在项目中被频繁纠正，记录到 `.learnings/` 并在 `.roo/rules/` 中写入否定规则。
