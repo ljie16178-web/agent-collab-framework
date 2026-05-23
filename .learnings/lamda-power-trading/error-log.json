@@ -1,0 +1,34 @@
+{
+  "project": "lamda-power-trading",
+  "version": "1.0",
+  "last_updated": "2026-05-23T06:11:00+08:00",
+  "errors": [],
+  "improvements": [
+    {
+      "improvement_id": "IMP-20260523-001",
+      "timestamp": "2026-05-23T06:11:00+08:00",
+      "category": "workflow",
+      "discovered_by": "流萤",
+      "task_id": "TASK-20260523-orchestrator-config",
+      "description": "Orchestrator 模式在架构设计阶段未严格执行 Memos MCP 协议（search_memory / add_message），需强制执行协议调用",
+      "action_taken": "在 .roo/rules-orchestrator/rules.md 第8节明确 Memos 调用时机，后续所有模式切换和任务段开始时强制调用 search_memory",
+      "promoted_to_skill": false,
+      "skill_file": "",
+      "pattern_key": "workflow.memos_mcp.enforce_protocol_call",
+      "memos_id": ""
+    },
+    {
+      "improvement_id": "IMP-20260523-002",
+      "timestamp": "2026-05-23T06:11:00+08:00",
+      "category": "workflow",
+      "discovered_by": "杰",
+      "task_id": "TASK-20260523-orchestrator-config",
+      "description": "error-log.json 需由 Code 模式创建（Architect 模式无写 JSON 权限），需建立跨模式文件创建委托机制",
+      "action_taken": "杰手动触发 Code 模式创建 error-log.json 模板文件",
+      "promoted_to_skill": false,
+      "skill_file": "",
+      "pattern_key": "workflow.file_creation.cross_mode_delegation",
+      "memos_id": ""
+    }
+  ]
+}
